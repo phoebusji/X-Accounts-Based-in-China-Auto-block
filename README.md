@@ -1,5 +1,5 @@
-# X-Accounts-Based-in-China-Auto-Mute
-Auto-Mute CCP troll X (Twitter) accounts.
+# X-Accounts-Based-in-China-Auto-Block
+Auto-Block CCP troll X (Twitter) accounts.
 
 Database Used: 
 - [basedinchina.com](https://basedinchina.com/home)
@@ -30,6 +30,20 @@ By [@trailblaziger](https://x.com/trailblaziger)
 
 ### 4. 在 X (Twitter) 主页使用
 
-按 F5 刷新页面并使用脚本。
-
 ![使用脚本](https://github.com/anonym-g/X-Accounts-Based-in-China-Auto-Mute/raw/main/pictures/X-home.png)
+
+原始作者的脚本是mute操作，我改成了block操作。由于twitter的限制，原始的脚本，在获取已经blocked账号的时候，很快触发429限速，现在改成手动获取blocked账号列表（能力有限，没找到更好的方法）。
+脚本运行流程及注意事项：
+1. 脚本基于原作者anonym-g，我不懂脚本，使用AI grok，帮我修改。
+2. 进入Blocked Accounts页面(https://x.com/settings/blocked/all).
+3. 手动向下翻页，刷出一些数量的blocked账号。
+4. 滚动条拖到最上面，运行脚本，脚本自动翻页向下刷出所有账号。
+5. 在自动获取blocked的时候，脚本运行时需要处于前台，不能切换标签页，不能锁屏，等待完全获取后，可以切换到后台。
+6. 也可以手动刷出所有账号后，再运行脚本。
+7. 可能由于twitter的限制，有时刷了一会刷不出来了，可以手动往回翻几页再往后翻页。
+8. 由于每次获取blocked的脚本非常慢，添加了可以选择从上次获取的blocked的本地存储来运行来节省时间，但注意定期需要完整网页获取。首次运行需要完整网页获取。
+9. 由于twitter 的短时间blocked数量限制，会出现401错误，账号被强制退出，需要重新登录账号。
+10. 我自己运行的感觉twitter每天block的上限好像是1000左右。
+11. 账号需要开启两步验证，防止账号被封掉。
+12. 谨慎运行脚本，防止自己账号被封掉。
+13. 如果账号被封与本人无关。

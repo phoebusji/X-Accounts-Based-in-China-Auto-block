@@ -13,7 +13,7 @@ By [@trailblaziger](https://x.com/trailblaziger)
 
 原始作者的脚本是mute操作，我改成了block操作。由于twitter的限制，原始的脚本，在获取已经blocked账号的时候，很快触发429限速，现在改成手动获取blocked账号列表（能力有限，没找到更好的方法）。
 脚本运行流程及注意事项：
-1. 脚本基于原作者anonym-g(https://github.com/anonym-g)，我不懂脚本，使用AI grok，帮我修改。
+1. 脚本基于原作者anonym-g(https://github.com/anonym-g), 我不懂脚本，使用AI grok，帮我修改。
 2. 进入Blocked Accounts页面(https://x.com/settings/blocked/all).
 3. 手动向下翻页，刷出一些数量的blocked账号。
 4. 滚动条拖到最上面，运行脚本，脚本自动翻页向下刷出所有账号。

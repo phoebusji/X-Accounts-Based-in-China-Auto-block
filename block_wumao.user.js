@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitter/X Glass Great Wall (Block Version)
 // @namespace    https://github.com/phoebusji/X-Accounts-Based-in-China-Auto-block
-// @version      3.0.9-block-stop  // 更新版本号以反映修改
+// @version      3.0.10-block-stop
 // @description  Auto-Block CCP troll X (Twitter) accounts. 自动拉黑 X (Twitter) 五毛账号。
 // @author       OpenSource
 // @match        https://x.com/*
@@ -695,6 +695,11 @@ onmessage = function (event) {\
                             this.ui.log("触发风控 (429)，暂停 600 秒...", true);
                             await this.interruptibleSleep(600000);
                             i--;
+                        } else if(res.status === 404) {
+                            this.ui.log(`触发HTTP 错误 (404)，跳过 @${user}`, true);
+//                            this.ui.log(`触发HTTP 错误 (404)，暂停 18 秒后重试...`, true);
+//                            await this.interruptibleSleep(18000);
+//                            i--;
                         } else {
                           this.ui.log("未知HTTP 错误，操作已被中止");
                           break;
